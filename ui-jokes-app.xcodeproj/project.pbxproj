@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D56C6DDC2A2610AC001FBD5B /* UI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DDB2A2610AC001FBD5B /* UI+Extensions.swift */; };
+		D56C6DDF2A261284001FBD5B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DDE2A261284001FBD5B /* NetworkClient.swift */; };
+		D56C6DE62A2614CF001FBD5B /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DE52A2614CF001FBD5B /* JokeModel.swift */; };
+		D56C6DE82A261AC4001FBD5B /* JokeFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DE72A261AC4001FBD5B /* JokeFactoryProtocol.swift */; };
+		D56C6DEA2A261C0B001FBD5B /* JokeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DE92A261C0B001FBD5B /* JokeFactory.swift */; };
+		D56C6DEC2A261C8B001FBD5B /* JokeFactoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DEB2A261C8B001FBD5B /* JokeFactoryDelegate.swift */; };
+		D56C6DEE2A261D64001FBD5B /* JokeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DED2A261D64001FBD5B /* JokeLoader.swift */; };
+		D56C6DF02A261E57001FBD5B /* RandomJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C6DEF2A261E57001FBD5B /* RandomJoke.swift */; };
 		D5F558882A0297F700E5D485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F558872A0297F700E5D485 /* AppDelegate.swift */; };
 		D5F5588A2A0297F700E5D485 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F558892A0297F700E5D485 /* SceneDelegate.swift */; };
 		D5F5588C2A0297F700E5D485 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F5588B2A0297F700E5D485 /* ViewController.swift */; };
@@ -38,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D56C6DDB2A2610AC001FBD5B /* UI+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extensions.swift"; sourceTree = "<group>"; };
+		D56C6DDE2A261284001FBD5B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		D56C6DE52A2614CF001FBD5B /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		D56C6DE72A261AC4001FBD5B /* JokeFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeFactoryProtocol.swift; sourceTree = "<group>"; };
+		D56C6DE92A261C0B001FBD5B /* JokeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeFactory.swift; sourceTree = "<group>"; };
+		D56C6DEB2A261C8B001FBD5B /* JokeFactoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeFactoryDelegate.swift; sourceTree = "<group>"; };
+		D56C6DED2A261D64001FBD5B /* JokeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeLoader.swift; sourceTree = "<group>"; };
+		D56C6DEF2A261E57001FBD5B /* RandomJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJoke.swift; sourceTree = "<group>"; };
 		D5F558842A0297F700E5D485 /* ui-jokes-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ui-jokes-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F558872A0297F700E5D485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F558892A0297F700E5D485 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +96,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D56C6DDA2A26107C001FBD5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D56C6DDB2A2610AC001FBD5B /* UI+Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D56C6DDD2A261273001FBD5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D56C6DDE2A261284001FBD5B /* NetworkClient.swift */,
+				D56C6DE72A261AC4001FBD5B /* JokeFactoryProtocol.swift */,
+				D56C6DE92A261C0B001FBD5B /* JokeFactory.swift */,
+				D56C6DEB2A261C8B001FBD5B /* JokeFactoryDelegate.swift */,
+				D56C6DED2A261D64001FBD5B /* JokeLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D56C6DE22A2612F3001FBD5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D56C6DE52A2614CF001FBD5B /* JokeModel.swift */,
+				D56C6DEF2A261E57001FBD5B /* RandomJoke.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D5F5587B2A0297F700E5D485 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +148,9 @@
 		D5F558862A0297F700E5D485 /* ui-jokes-app */ = {
 			isa = PBXGroup;
 			children = (
+				D56C6DE22A2612F3001FBD5B /* Models */,
+				D56C6DDD2A261273001FBD5B /* Services */,
+				D56C6DDA2A26107C001FBD5B /* Helpers */,
 				D5F558872A0297F700E5D485 /* AppDelegate.swift */,
 				D5F558892A0297F700E5D485 /* SceneDelegate.swift */,
 				D5F5588B2A0297F700E5D485 /* ViewController.swift */,
@@ -274,9 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56C6DE62A2614CF001FBD5B /* JokeModel.swift in Sources */,
 				D5F5588C2A0297F700E5D485 /* ViewController.swift in Sources */,
+				D56C6DF02A261E57001FBD5B /* RandomJoke.swift in Sources */,
+				D56C6DDF2A261284001FBD5B /* NetworkClient.swift in Sources */,
 				D5F558882A0297F700E5D485 /* AppDelegate.swift in Sources */,
 				D5F5588A2A0297F700E5D485 /* SceneDelegate.swift in Sources */,
+				D56C6DEA2A261C0B001FBD5B /* JokeFactory.swift in Sources */,
+				D56C6DEC2A261C8B001FBD5B /* JokeFactoryDelegate.swift in Sources */,
+				D56C6DE82A261AC4001FBD5B /* JokeFactoryProtocol.swift in Sources */,
+				D56C6DDC2A2610AC001FBD5B /* UI+Extensions.swift in Sources */,
+				D56C6DEE2A261D64001FBD5B /* JokeLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

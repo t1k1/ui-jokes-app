@@ -147,6 +147,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="refreshButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="gqr-jP-Jnc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLx-7E-IAp">
                                         <rect key="frame" x="119.33333333333336" y="0.0" width="209.66666666666663" height="64"/>
@@ -164,12 +167,19 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showPunchlineButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="5EY-hd-sPI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="FQi-b9-3p4"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-6w-CFz">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,17 +189,24 @@
                             <constraint firstItem="70Z-am-9Ng" firstAttribute="top" secondItem="0n8-My-41G" secondAttribute="bottom" constant="55" id="7er-YJ-lJn"/>
                             <constraint firstItem="70Z-am-9Ng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="9eA-8o-vsZ"/>
                             <constraint firstItem="0n8-My-41G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="IRA-Ng-33h"/>
+                            <constraint firstItem="R9H-6w-CFz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="abI-uX-Nmv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="70Z-am-9Ng" secondAttribute="bottom" constant="64" id="ev4-b0-5qQ"/>
                             <constraint firstItem="0n8-My-41G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ojZ-m6-x6T"/>
+                            <constraint firstItem="R9H-6w-CFz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r6R-gQ-Vby"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="baY-ea-fVg" id="ggj-7m-Igz"/>
+                        <outlet property="activityIndicator" destination="R9H-6w-CFz" id="tXq-yf-Ti3"/>
+                        <outlet property="jokeIdLabel" destination="ZoH-9O-EUp" id="div-1a-vE4"/>
+                        <outlet property="refreshButton" destination="hPu-2L-SBA" id="ntO-3N-4ld"/>
+                        <outlet property="setupTextView" destination="baY-ea-fVg" id="k9p-i8-4aJ"/>
+                        <outlet property="showPunclineButton" destination="wLx-7E-IAp" id="CmS-fB-q5D"/>
+                        <outlet property="typeLabel" destination="GFf-K4-gl8" id="scE-S6-LxP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1763" y="39"/>
+            <point key="canvasLocation" x="-2360" y="17"/>
         </scene>
     </scenes>
     <resources>
