@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet private weak var setupTextView: UITextView!
     @IBOutlet private weak var typeLabel: UILabel!
@@ -23,17 +23,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func showPunchlineButtonClicked() {
+        showPunchline()
     }
     
     // MARK: - Variables
     private var currentJoke: JokeModel?
     private var jokeFactory: JokeFactoryProtocol?
+    private var alertPresenter: AlertPresenterProtocol?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         jokeFactory = JokeFactory(delegate: self, jokeLoader: JokeLoader())
+        alertPresenter = AlertPresenter(delegate: self)
         
         setupTextView.setup()
         
@@ -41,7 +44,12 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: JokeFactoryDelegate {
+extension ViewController: JokeFactoryDelegate, AlertPresentableDelegate {
+    // MARK: - AlertPresentableDelegate
+    func present(alert: UIAlertController, animated flag: Bool) {
+        self.present(alert, animated: flag)
+    }
+    
     // MARK: - JokeFactoryDelegate
     func didReceiveNextJoke(joke: JokeModel?){
         guard let joke = joke else { return }
@@ -52,6 +60,8 @@ extension ViewController: JokeFactoryDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.show(joke: currentJoke)
         }
+        showPunclineButton.isUserInteractionEnabled = true
+        refreshButton.isPointerInteractionEnabled = true
     }
     
     func didLoadDataFromServer() {
@@ -76,7 +86,25 @@ extension ViewController: JokeFactoryDelegate {
         setupTextView.text = ""
         
         loadingIndicatorHidden(false)
+        showPunclineButton.isUserInteractionEnabled = false
+        refreshButton.isPointerInteractionEnabled = false
+        
         jokeFactory?.loadJoke()
+    }
+    
+    private func showPunchline() {
+        guard let currentJoke = currentJoke else {
+            return
+        }
+        
+        let alert = AlertModel(title: "Punchline",
+                               message: currentJoke.punchline,
+                               buttonText: "Ok",
+                               completion: { [weak self] in
+            guard let self = self else { return }
+            self.showNextJoke()
+        })
+        alertPresenter?.show(alert)
     }
     
     private func loadingIndicatorHidden(_ state: Bool) {

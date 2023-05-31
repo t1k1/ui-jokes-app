@@ -15,7 +15,7 @@ extension UITextView {
         let positiveTopOffset = max(1, topOffset)
         contentOffset.y = -positiveTopOffset
         
-        addBordersWithColor(color: UIColor.black, height: CGFloat(3))
+        addBordersWithColor(color: UIColor.black, height: CGFloat(1))
     }
     
     func addBordersWithColor(color: UIColor, height: CGFloat) {
